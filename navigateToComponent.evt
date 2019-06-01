@@ -1,0 +1,6 @@
+<aura:event access="global" type="COMPONENT" description="Event template" > 
+    <!--aura:attribute name="accounts" type="account[]"/-->
+    <aura:attribute name="selectfield" type="String"/>
+    <aura:attribute name="selectcondition" type="String"/>
+    <aura:attribute name="Enteredvalue" type="String"/>
+</aura:event>
