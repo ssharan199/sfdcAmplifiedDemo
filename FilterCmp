@@ -1,0 +1,29 @@
+<aura:component controller="AccountController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="accId" type="String" access="global"/>
+    <aura:attribute name="accounts" type="List" /> 
+    <aura:attribute name="comments" type="String" />
+    <aura:registerEvent type="c:navigateToComponent" name="navigateToComponent"/>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <ui:inputSelect aura:Id="fields" multiple="false"  label="Select field " class="select_c">
+                <ui:inputSelectOption label="Name" text="Name"/>
+                <ui:inputSelectOption label="Description" text="Description"/>
+                <ui:inputSelectOption label="Number Of Employees" text="NumberOfEmployees"/>
+                <ui:inputSelectOption label="Annual Revenue" text="AnnualRevenue"/>
+                <ui:inputSelectOption label="Phone" text="Phone"/>  
+            </ui:inputSelect>
+        </div>
+        <div class="slds-col">
+            <ui:inputSelect  aura:Id="condition" multiple="false"  label="Select condition" class="select_c">
+                <ui:inputSelectOption label="Select Channel" text=" " />
+                <ui:inputSelectOption label="Equals to" text="Equals to"/>
+                <ui:inputSelectOption label="Not Equals to" text="Not Equals to"/>
+                <ui:inputSelectOption label="contains" text="contains"/>        
+            </ui:inputSelect>
+        </div>
+        <div class="slds-col">
+            <ui:inputText aura:id="comments" value="{!v.comments}" label="Enter Value" class="select_c" />
+        </div>
+    </div>
+    <lightning:button label="Filter" onclick="{!c.filter}"/>
+</aura:component>
