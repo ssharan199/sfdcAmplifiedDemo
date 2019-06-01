@@ -1,0 +1,35 @@
+({
+    doInit: function(component, event, helper) {
+        helper.getAccountList(component,event,helper);
+    },getrecord: function(component, event, helper) {
+        
+        helper.getrecordlist(component,event,helper);
+    },
+    
+    View : function(component, event, helper){
+        component.set("v.showFilter",true);
+       component.set("v.Likedisable",true);
+    },
+    
+    setFilterResult : function(component, event, helper){
+        var selectfield = event.getParam('selectfield');    
+        var selectcondition = event.getParam('selectcondition');
+        var Enteredvalue = event.getParam('Enteredvalue');
+      
+        var action = component.get('c.filteredAccount');
+        action.setParams({
+            selectfield	:selectfield,
+            selectcondition	:selectcondition,
+            value:Enteredvalue
+            
+        });        
+        action.setCallback(this, function(actionResult) {
+            var state = actionResult.getState();
+            if(state ==="SUCCESS"){                
+                component.set('v.accounts', actionResult.getReturnValue());
+               
+            }
+        }); 
+        $A.enqueueAction(action);        
+    }
+})
