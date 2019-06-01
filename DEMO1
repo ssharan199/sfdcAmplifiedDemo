@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	Welcome to the Introduction of Lightning Lifecycle 
+    <br/>
+Youtube Live Link - <a href='https://www.youtube.com/watch?v=vA32rsplG7Y'>https://www.youtube.com/watch?v=vA32rsplG7Y</a>
+    <br/>
+Date - Sunday,June 2, 2019
+    <br/>
+Time <br/>
+8:30 pm - 10:30 pm IST<br/>
+8:00 am - 10:00 am PST<br/>
+11:00 am - 1:00 pm EST<br/>
+    <br/>
+Agenda<br/>
+1. Introduction to Lightning Component Framework.<br/>
+2. Advantages of Lightning framework over Classic.<br/>
+3. Hands on - Lightning Component End to End with Apex Controller.<br/>
+
+Speakers for the Day:<br/>
+Smriti Sharan<br/>
+Mohit Sharma<br/>
+
+</aura:component>
