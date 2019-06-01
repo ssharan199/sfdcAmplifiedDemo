@@ -1,0 +1,58 @@
+<aura:component controller="AccountController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="accounts" type="List" /> 
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+     <h1>Account List:</h1>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+  <thead>
+    <tr class="slds-line-height_reset">
+      <th class="slds-text-title_caps" scope="col">
+        <div class="slds-truncate" title="ID">ID</div>
+      </th>
+      <th class="slds-text-title_caps" scope="col">
+        <div class="slds-truncate" title="Account Name">Account Name</div>
+      </th>
+      <th class="slds-text-title_caps" scope="col">
+        <div class="slds-truncate" title="Description">Description</div>
+      </th>
+      <th class="slds-text-title_caps" scope="col">
+        <div class="slds-truncate" title="Number Of Employees">Number Of Employees</div>
+      </th>
+      <th class="slds-text-title_caps" scope="col">
+        <div class="slds-truncate" title="Annual Revenue">Annual Revenue</div>
+      </th>
+      <th class="slds-text-title_caps" scope="col">
+        <div class="slds-truncate" title="Phone">Phone</div>
+      </th>
+      
+    </tr>
+  </thead>
+                
+            <tbody> 
+                <aura:iteration items="{!v.accounts}" var="account"> 
+    <tr class="slds-hint-parent">
+      <th data-label="ID" scope="row">
+        <div class="slds-truncate" title="{!account.Id}"><a href="javascript:void(0);" tabindex="-1">{!account.Id}</a></div>
+      </th>
+      <td data-label="Account Name">
+        <div class="slds-truncate" title="{!account.Name}">{!account.Name}</div>
+      </td>
+      <td data-label="Description">
+        <div class="slds-truncate" title="{!account.Description}">{!account.Description}</div>
+      </td>
+      <td data-label="Number Of Employees">
+        <div class="slds-truncate" title="{!account.NumberOfEmployees}">{!account.NumberOfEmployees}</div>
+      </td>
+      <td data-label="Annual Revenue">
+        <div class="slds-truncate" title="{!account.AnnualRevenue}">{!account.AnnualRevenue}</div>
+      </td>
+      <td data-label="Phone">
+        <div class="slds-truncate" title="{!account.Phone}">{!account.Phone}</div>
+      </td>
+      
+    </tr>
+    
+               </aura:iteration>
+  </tbody>
+    </table>
+</aura:component>
