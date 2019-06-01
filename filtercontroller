@@ -1,0 +1,14 @@
+({
+	filter : function(component, event, helper) {
+        var navigateToAcc = component.getEvent("navigateToComponent");
+        
+        navigateToAcc.setParams({
+            "selectfield" : component.find("fields").get("v.value"),
+            "selectcondition" : component.find("condition").get("v.value"),
+            "Enteredvalue" : component.get("v.comments")
+        });        
+        navigateToAcc.fire();
+       
+	}
+    
+})
